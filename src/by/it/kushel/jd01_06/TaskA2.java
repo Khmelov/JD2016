@@ -27,13 +27,10 @@ public class TaskA2 {
             if (hm.containsKey(word)) {
                 int prevCounts = hm.get(word);
                 hm.put(word, prevCounts + 1);
-
             } else {
                 hm.put(word, 1);
             }
-
         }
-
         for (String word : hm.keySet()) {
             System.out.println(word+" --> " +hm.get(word));
         }

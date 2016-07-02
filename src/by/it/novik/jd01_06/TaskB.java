@@ -72,17 +72,17 @@ public class TaskB {
             sentences[i] = m.group().replaceAll("\\n", " ");
             i++;
         }
-        //Создаем Map для хранения пары количество слов в предложениии-список предложений (т.к. могут быть с одинаковым размером предложении)
+        //Создаем MapValues для хранения пары количество слов в предложениии-список предложений (т.к. могут быть с одинаковым размером предложении)
         Map<Integer, List<String>> countWordsSentences = new HashMap<>();
         for (String sen : sentences) {
             String[] arrayWords = sen.split("[^а-яА-ЯёЁ]"); //Массив слов для каждого предложения
-            if (countWordsSentences.containsKey(arrayWords.length)) { //Проверка на наличия такого ключа(размера массива слов) в Map
+            if (countWordsSentences.containsKey(arrayWords.length)) { //Проверка на наличия такого ключа(размера массива слов) в MapValues
                 List<String> listSentences = countWordsSentences.get(arrayWords.length); //Получение листа по ключу и добавление к нему ещё одного предложения
                 listSentences.add(sen);
             } else {
                 List<String> listSentences = new ArrayList<>(); //Создание нового листа
                 listSentences.add(sen);
-                countWordsSentences.put(arrayWords.length, listSentences); //Добавление листа с ключом в Map
+                countWordsSentences.put(arrayWords.length, listSentences); //Добавление листа с ключом в MapValues
             }
         }
         //Получение списка ключей(количество слов в предложении) для сортировки

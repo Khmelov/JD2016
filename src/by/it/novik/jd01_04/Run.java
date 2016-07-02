@@ -11,12 +11,12 @@ public class Run {
 
     public static void main(String[] args) throws IOException {
         //System.out.println("Введите количество уравнений СЛАУ");
-        //String line1=InOut.consoleStringLine();
+        //String line1=Input.consoleStringLine();
         //int n=Integer.parseInt(line1);
         //double[] [] arrayM=new double[n] [n];
         //for(int i=0;i<n;i++){
         //System.out.println("Введите "+n+"коэффициентов свободных членов для "+i+1+" уравнения СЛАУ");
-        //String line2=InOut.consoleStringLine();
+        //String line2=Input.consoleStringLine();
         //arrayM[i]= Util.StringLineToIntArray(line2);}
 
 
@@ -30,7 +30,7 @@ public class Run {
         };
         //Вектор правых частей уравнений СЛАУ
         //System.out.println("Введите элементы вектора правых частей СЛАУ через пробел");
-        //String line=InOut.consoleStringLine();
+        //String line=Input.consoleStringLine();
         //double[] Y= Util.StringLineToIntArray(line);
         double[] Y={20, 11, 40, 37};
         //Создание объекта класса СЛАУ

@@ -263,7 +263,7 @@ public class TaskC {
     /**
      * Формирование неповторяющихся значений строк и столбцов максимальных элементов массива
      * @param maxElemCoords Список координат максимальных элементов
-     * @return Map неповторяющихся значений строк и столбцов максимальных элементов
+     * @return MapValues неповторяющихся значений строк и столбцов максимальных элементов
      */
     private Map<String, List> getLineWithMax(List<int[]> maxElemCoords) {
         List rows = new ArrayList(); //Создаем список неповторяющихся строк максимальных элементов
@@ -278,7 +278,7 @@ public class TaskC {
                 rows.add(row);
             }
         }
-        Map<String, List> lineForDelete = new HashMap<String, List>();// Создаем Map
+        Map<String, List> lineForDelete = new HashMap<String, List>();// Создаем MapValues
         lineForDelete.put("rows", rows);
         lineForDelete.put("columns", columns);
         return lineForDelete;
@@ -286,7 +286,7 @@ public class TaskC {
 
     /**
      * Удаление строк и столбцов матрицы, содержащих максимальный элемент
-     * @param linesWithMax Map неповторяющихся значений строк и столбцов максимальных элементов
+     * @param linesWithMax MapValues неповторяющихся значений строк и столбцов максимальных элементов
      * @return Массив
      */
     private int[][] deleteLinesWithMax(Map<String, List> linesWithMax){

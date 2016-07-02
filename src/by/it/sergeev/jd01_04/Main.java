@@ -32,5 +32,6 @@ public class Main {
         InOut.arrayPrint(Util.arrayMulArray(m,x),"yy",4);
 
         System.out.println("Детерминант = " + Util.findDeterminant(m));
+
     }
 }

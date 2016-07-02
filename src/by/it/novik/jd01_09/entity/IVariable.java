@@ -21,6 +21,20 @@ public interface IVariable {
     Object getValue ();
 
     /**
+     * Установить название переменной
+     * @param nameVar Название переменной
+     * @return true - переменная по имени сохранена
+     */
+    boolean saveByName (String nameVar);
+
+    /**
+     * Получить значение переменной по названию
+     * @param nameVar Название переменной
+     * @return Значение переменной типа Object
+     */
+    Object readByName (String nameVar);
+
+    /**
      * Преобразование значение переменной в строку
      * @return Значение переменной в виде строки
      */

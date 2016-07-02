@@ -1,5 +1,7 @@
 package by.it.sinkevich.jd01_09.manipulators;
 
+import by.it.sinkevich.jd01_09.exceptions.MathLabException;
+import by.it.sinkevich.jd01_09.logger.Logger;
 import by.it.sinkevich.jd01_09.operations.IArithmeticOperation;
 import by.it.sinkevich.jd01_09.variables.MathLabFloat;
 import by.it.sinkevich.jd01_09.variables.MathLabMatrix;
@@ -11,29 +13,57 @@ import by.it.sinkevich.jd01_09.variables.MathLabVector;
  *
  * @author Sinkevich Denis
  */
-public class Manipulator implements IArithmeticOperation {
+class Manipulator implements IArithmeticOperation {
 
     @Override
     public MathLabVariable addition(MathLabVariable first, MathLabVariable second) {
-        return castArgumentsAndChooseTypeOfOperation(first, second, "add");
+        try {
+            return castArgumentsAndChooseTypeOfOperation(first, second, "add");
+        } catch (MathLabException e) {
+            Logger logger = Logger.getLoggerInstance();
+            logger.writeErrorMessage(e.getMessage());
+            System.out.println(e.getMessage());
+        }
+        return null;
     }
 
     @Override
     public MathLabVariable subtraction(MathLabVariable first, MathLabVariable second) {
-        return castArgumentsAndChooseTypeOfOperation(first, second, "sub");
+        try {
+            return castArgumentsAndChooseTypeOfOperation(first, second, "sub");
+        } catch (MathLabException e) {
+            Logger logger = Logger.getLoggerInstance();
+            logger.writeErrorMessage(e.getMessage());
+            System.out.println(e.getMessage());
+        }
+        return null;
     }
 
     @Override
     public MathLabVariable multiplication(MathLabVariable first, MathLabVariable second) {
-        return castArgumentsAndChooseTypeOfOperation(first, second, "mul");
+        try {
+            return castArgumentsAndChooseTypeOfOperation(first, second, "mul");
+        } catch (MathLabException e) {
+            Logger logger = Logger.getLoggerInstance();
+            logger.writeErrorMessage(e.getMessage());
+            System.out.println(e.getMessage());
+        }
+        return null;
     }
 
     @Override
     public MathLabVariable division(MathLabVariable first, MathLabVariable second) {
-        return castArgumentsAndChooseTypeOfOperation(first, second, "div");
+        try {
+            return castArgumentsAndChooseTypeOfOperation(first, second, "div");
+        } catch (MathLabException e) {
+            Logger logger = Logger.getLoggerInstance();
+            logger.writeErrorMessage(e.getMessage());
+            System.out.println(e.getMessage());
+        }
+        return null;
     }
 
-    private MathLabVariable castArgumentsAndChooseTypeOfOperation(MathLabVariable first, MathLabVariable second, String typeOfOperation) {
+    private MathLabVariable castArgumentsAndChooseTypeOfOperation(MathLabVariable first, MathLabVariable second, String typeOfOperation) throws MathLabException {
         if (first instanceof MathLabFloat) {
             return castArgumentsAndChooseTypeOfOperation((MathLabFloat) first, second, typeOfOperation);
         } else if (first instanceof MathLabVector) {
@@ -43,7 +73,7 @@ public class Manipulator implements IArithmeticOperation {
         }
     }
 
-    private MathLabVariable castArgumentsAndChooseTypeOfOperation(MathLabFloat first, MathLabVariable second, String typeOfOperation) {
+    private MathLabVariable castArgumentsAndChooseTypeOfOperation(MathLabFloat first, MathLabVariable second, String typeOfOperation) throws MathLabException {
         if (second instanceof MathLabFloat) {
             return chooseOperation(first, (MathLabFloat) second, typeOfOperation);
         } else if (second instanceof MathLabVector) {
@@ -53,7 +83,7 @@ public class Manipulator implements IArithmeticOperation {
         }
     }
 
-    private MathLabVariable castArgumentsAndChooseTypeOfOperation(MathLabVector first, MathLabVariable second, String typeOfOperation) {
+    private MathLabVariable castArgumentsAndChooseTypeOfOperation(MathLabVector first, MathLabVariable second, String typeOfOperation) throws MathLabException {
         if (second instanceof MathLabFloat) {
             return chooseOperation(first, (MathLabFloat) second, typeOfOperation);
         } else if (second instanceof MathLabVector) {
@@ -63,7 +93,7 @@ public class Manipulator implements IArithmeticOperation {
         }
     }
 
-    private MathLabVariable castArgumentsAndChooseTypeOfOperation(MathLabMatrix first, MathLabVariable second, String typeOfOperation) {
+    private MathLabVariable castArgumentsAndChooseTypeOfOperation(MathLabMatrix first, MathLabVariable second, String typeOfOperation) throws MathLabException {
         if (second instanceof MathLabFloat) {
             return chooseOperation(first, (MathLabFloat) second, typeOfOperation);
         } else if (second instanceof MathLabVector) {
@@ -86,7 +116,7 @@ public class Manipulator implements IArithmeticOperation {
         }
     }
 
-    private MathLabVariable chooseOperation(MathLabFloat first, MathLabVector second, String typeOfOperation) {
+    private MathLabVariable chooseOperation(MathLabFloat first, MathLabVector second, String typeOfOperation) throws MathLabException {
         switch (typeOfOperation) {
             case "add":
                 return AdditionMethodContainer.addition(first, second);
@@ -99,7 +129,7 @@ public class Manipulator implements IArithmeticOperation {
         }
     }
 
-    private MathLabVariable chooseOperation(MathLabFloat first, MathLabMatrix second, String typeOfOperation) {
+    private MathLabVariable chooseOperation(MathLabFloat first, MathLabMatrix second, String typeOfOperation) throws MathLabException {
         switch (typeOfOperation) {
             case "add":
                 return AdditionMethodContainer.addition(first, second);
@@ -125,7 +155,7 @@ public class Manipulator implements IArithmeticOperation {
         }
     }
 
-    private MathLabVariable chooseOperation(MathLabVector first, MathLabVector second, String typeOfOperation) {
+    private MathLabVariable chooseOperation(MathLabVector first, MathLabVector second, String typeOfOperation) throws MathLabException {
         switch (typeOfOperation) {
             case "add":
                 return AdditionMethodContainer.addition(first, second);
@@ -138,7 +168,7 @@ public class Manipulator implements IArithmeticOperation {
         }
     }
 
-    private MathLabVariable chooseOperation(MathLabVector first, MathLabMatrix second, String typeOfOperation) {
+    private MathLabVariable chooseOperation(MathLabVector first, MathLabMatrix second, String typeOfOperation) throws MathLabException {
         switch (typeOfOperation) {
             case "add":
                 return AdditionMethodContainer.addition(first, second);
@@ -164,7 +194,7 @@ public class Manipulator implements IArithmeticOperation {
         }
     }
 
-    private MathLabVariable chooseOperation(MathLabMatrix first, MathLabVector second, String typeOfOperation) {
+    private MathLabVariable chooseOperation(MathLabMatrix first, MathLabVector second, String typeOfOperation) throws MathLabException {
         switch (typeOfOperation) {
             case "add":
                 return AdditionMethodContainer.addition(first, second);
@@ -177,7 +207,7 @@ public class Manipulator implements IArithmeticOperation {
         }
     }
 
-    private MathLabVariable chooseOperation(MathLabMatrix first, MathLabMatrix second, String typeOfOperation) {
+    private MathLabVariable chooseOperation(MathLabMatrix first, MathLabMatrix second, String typeOfOperation) throws MathLabException {
         switch (typeOfOperation) {
             case "add":
                 return AdditionMethodContainer.addition(first, second);

@@ -35,9 +35,17 @@ public abstract class Variable implements IVariable {
 //    }
 
     @Override
-    public Object getValue() {return null;}
+    public Object getValue() { return null; }
+
     @Override
     public void setValue(Object value) {}
+
+    @Override
+    public boolean saveByName(String nameVar) { return false; }
+
+    @Override
+    public Object readByName(String nameVar) { return null; }
+
     // Объявим абстрактный метод установки значения переменной со строки
     public abstract void setValue (String value);
 

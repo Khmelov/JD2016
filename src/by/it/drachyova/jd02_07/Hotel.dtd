@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+        <!ELEMENT Hotel (Name, Stars, Address, Rooms)>
+        <!ELEMENT Name (#PCDATA)>
+        <!ELEMENT Stars (#PCDATA)>
+        <!ELEMENT Address (#PCDATA)>
+        <!ELEMENT Rooms (Room)+>
+        <!ELEMENT Room (Type, Area, Price)>
+        <!ELEMENT Type (#PCDATA)>
+        <!ELEMENT Area (#PCDATA)>
+        <!ELEMENT Price (#PCDATA)>

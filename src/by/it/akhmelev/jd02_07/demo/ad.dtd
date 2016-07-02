@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+        <!ELEMENT Persons (Person)+>
+        <!ELEMENT Person (Email, Password, Nickname, Ads) >
+        <!ELEMENT Email (#PCDATA) >
+        <!ELEMENT Password (#PCDATA) >
+        <!ELEMENT Nickname (#PCDATA) >
+        <!ELEMENT Ads (ad)+>
+        <!ELEMENT ad (Description,Address,Flat,Flats,Price,Area)>
+        <!ELEMENT Description (#PCDATA) >
+        <!ELEMENT Address (#PCDATA) >
+        <!ELEMENT Flat (#PCDATA) >
+        <!ELEMENT Flats (#PCDATA) >
+        <!ELEMENT Price (#PCDATA) >
+        <!ELEMENT Area (#PCDATA) >

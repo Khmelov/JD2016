@@ -60,11 +60,8 @@ public class TaskA {
         Map<String, Integer> repeats = new HashMap<>();
         start = System.currentTimeMillis();
         for(String word: arrayWords2){
-            if(repeats.containsKey(word)){
-                repeats.put(word, repeats.get(word) + 1);
-            } else {
-                repeats.put(word, 1);
-            }
+            int value = repeats.containsKey(word) ?  (repeats.get(word) + 1) : 1;
+            repeats.put(word,value);
         }
         System.out.println("Затрачено времени 2: " + (System.currentTimeMillis() - start) + " ms");
         System.out.println(repeats);

@@ -1,0 +1,64 @@
+ 1 package by.it.novik.jd01_15;
+ 2 
+ 3 import java.io.*;
+ 4 import java.util.regex.Matcher;
+ 5 import java.util.regex.Pattern;
+ 6 
+ 7 /**
+ 8  * Created by Kate Novik.
+ 9  */
+10 public class TaskB {
+11     /**
+12      * Метод вывода кода
+13      * @param code код типа StringBuilder
+14      * @param out  Поток вывода
+15      */
+16     private static void writeCode(StringBuilder code, PrintStream out) {
+17         String[] codeLine = code.toString().split("\\n");
+18         for (int i = 0; i < codeLine.length; i++) {
+19             out.printf("%2d", i + 1);
+20             out.println(" " + codeLine[i]);
+21         }
+22     }
+23 
+24     public static void main(String[] args) {
+25         String src = System.getProperty("user.dir") + "/src/";
+26         String cl = TaskB.class.getName();
+27         System.out.println(cl);
+28         String path = src.concat(cl.replaceAll("\\.", "/").concat(".java"));
+29         System.out.println(path);
+30         try {
+31             BufferedReader in = new BufferedReader(new FileReader(path));
+32             String line;
+33             StringBuilder code = new StringBuilder("");
+34             
+35             while ((line = in.readLine()) != null) {
+36                 
+37                 
+38 
+39                 
+40 
+41                 line = line.replaceAll("
+42                 code.append(line);
+43             }
+44             
+45             Pattern pat = Pattern.compile("/\\*([^\\*/]*\\n?)?(\1)*(\1)?(\\*/)");
+46             Matcher mat = pat.matcher(code);
+47             while (mat.find()) {
+48                 String s = mat.group();
+49                 int start = mat.start();
+50                 int end = mat.end();
+51                 code.replace(start, end, "\n");
+52                 mat.reset();
+53             }
+54             System.out.println(code.toString());
+55             
+56             writeCode(code, System.out);
+57             
+58             PrintStream out = new PrintStream(new File(System.getProperty("user.dir") + "/src/by/it/novik/jd01_15/taskB.txt"));
+59             writeCode(code, out);
+60         } catch (IOException e) {
+61             System.err.println("Ошибка работы с " + path);
+62         }
+63     }
+64 }

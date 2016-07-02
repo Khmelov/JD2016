@@ -1,10 +1,9 @@
 package by.it.novik.jd01_09.operations;
 
-import by.it.novik.jd01_09.entity.DoubleValue;
 import by.it.novik.jd01_09.entity.Variable;
 
 /**
- * Created by Катя.
+ * Created by Kate Novik.
  */
 public interface IAddition {
     /**

@@ -1,0 +1,2 @@
+helloMessage=Привет, Синкевич Денис Сергеевич!
+errorMessage.LocaleNotFound = "Выбранный вами язык не поддерживается!"

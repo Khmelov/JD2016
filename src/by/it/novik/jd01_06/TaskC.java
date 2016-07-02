@@ -148,7 +148,7 @@ return System.currentTimeMillis()-start;
         Data data = new Data(); //Создаем объект с полем для хранения стихотворения
         String poem = data.getPoem(); //Вызываем метод для получения поля poem
         String[] words = poem.split("[^а-яА-ЯёЁ]+");
-        Map<String, Integer> repeats = new HashMap<>(); //Создаем Map для хранения одинаковых слов (ключ-слово, value-количество повторений)
+        Map<String, Integer> repeats = new HashMap<>(); //Создаем MapValues для хранения одинаковых слов (ключ-слово, value-количество повторений)
         for (int i = 0; i < words.length - 1; i++) {
             if (!words[i].isEmpty()) { //Если нет пустых значений
 
@@ -180,7 +180,7 @@ return System.currentTimeMillis()-start;
                         }
                     } else {
                         words[j] = ""; //Если слова равны, то заменяем на пустое повторяющееся слово
-                        if (repeats.containsKey(words[i])) { //Проверка на наличие повторяющегося слова в Map
+                        if (repeats.containsKey(words[i])) { //Проверка на наличие повторяющегося слова в MapValues
                             repeats.put(words[i], repeats.get(words[i]) + 1);
                         } else {
                             repeats.put(words[i], 2);
@@ -195,7 +195,7 @@ return System.currentTimeMillis()-start;
         int col = 1;
         for (String word : words) { //Вывод отсортированных слов
             if (!word.isEmpty()) { //Не выводим пустые значения
-                if (repeats.containsKey(word)) {//Если слово для вывода содержится в Map, то выводим его с количеством повторений
+                if (repeats.containsKey(word)) {//Если слово для вывода содержится в MapValues, то выводим его с количеством повторений
                     System.out.print(word.concat("(").concat(repeats.get(word).toString()).concat(") "));
                 } else {
                     System.out.print(word.concat(" "));

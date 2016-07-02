@@ -1,0 +1,86 @@
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://www.it-academy.by/xml/HorseRace"
+        xmlns:tns="http://www.it-academy.by/xml/HorseRace"
+        elementFormDefault="qualified">
+    <element name="HorseRaces">
+        <complexType>
+            <sequence>
+                <element name="HorseRace">
+                    <complexType>
+                        <all>
+                            <element name="Clients" type="tns:Clients"/>
+                            <element name="Races" type="tns:Races"/>
+                            <element name="BookMaker" type="tns:BookMaker"/>
+                            <element name="Horses" type="tns:Horses"/>
+                        </all>
+                        <attribute name="date" type="date" use="required"/>
+                    </complexType>
+                </element>
+            </sequence>
+        </complexType>
+    </element>
+    <complexType name="Clients">
+        <sequence>
+            <element name="Client" type="tns:Client" maxOccurs="unbounded"/>
+        </sequence>
+    </complexType>
+    <complexType name="Client">
+        <sequence>
+            <element name="Age" type="positiveInteger"/>
+            <element name="Vip" type="boolean"/>
+            <element name="Bets" type="tns:Bets"/>
+        </sequence>
+        <attribute name="name" type="string" use="required"/>
+        <attribute name="sex" type="string" use="optional"/>
+    </complexType>
+    <complexType name="Bets">
+        <sequence>
+            <element name="Bet" type="tns:Bet" maxOccurs="unbounded"/>
+        </sequence>
+    </complexType>
+    <complexType name="Bet">
+        <sequence>
+            <element name="Race" type="tns:Race"/>
+            <element name="Horse" type="tns:Horse"/>
+            <element name="Sum" type="double"/>
+            <element name="Payout" type="double"/>
+        </sequence>
+        <attribute name="time" type="time" use="required"/>
+    </complexType>
+    <complexType name="Race">
+        <sequence>
+            <element name="RaceNumber" type="positiveInteger"/>
+            <element name="Horses" type="tns:Horses"/>
+            <element name="Winner" type="tns:Winner"/>
+        </sequence>
+        <attribute name="time" type="time" use="required"/>
+    </complexType>
+    <complexType name="Horses">
+        <sequence>
+            <element name="Horse" type="tns:Horse" maxOccurs="unbounded"/>
+        </sequence>
+    </complexType>
+    <complexType name="Horse">
+        <sequence>
+            <element name="Name" type="string"/>
+            <element name="Odds" type="double"/>
+        </sequence>
+    </complexType>
+    <complexType name="Winner">
+        <sequence>
+            <element name="Horse" type="tns:Horse"/>
+        </sequence>
+    </complexType>
+    <complexType name="Races">
+        <sequence>
+            <element name="Race" type="tns:Race" maxOccurs="unbounded"/>
+        </sequence>
+    </complexType>
+    <complexType name="BookMaker">
+        <sequence>
+            <element name="Name" type="string"/>
+            <element name="Bets" type="tns:Bets"/>
+            <element name="Profit" type="double"/>
+        </sequence>
+    </complexType>
+</schema>

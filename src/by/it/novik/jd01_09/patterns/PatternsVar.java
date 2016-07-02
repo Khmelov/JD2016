@@ -4,23 +4,21 @@ package by.it.novik.jd01_09.patterns;
  * Created by Kate Novik.
  */
 public class PatternsVar {
-    static public String regxMat = "\\{((\\{(-?[0-9\\.,])+\\}),?)+\\}";
-    static public String regxVec = "\\{(-?[0-9\\.,])+\\}";
-    static public String regxD = "-?[0-9]+(\\.[0-9]+)?";
-    static public String regxSc = "\\},\\{";
-    static public String regxOper = "[+\\-/*]";
-    static public String regxOr = "("+regxMat+")|("+regxVec+")|("+regxD+")";
+    public static String regxMat = "[\\{\\[](([\\{\\[](-?[0-9\\.,])+[\\}\\]]),?)+[\\}\\]]";
+    public static String regxVec = "[\\{\\[](-?[0-9\\.,])+[\\}\\]]";
+    public static String regxD = "-?[0-9]+(\\.[0-9]+)?";
+    public static String regxSc = "[\\}\\]],[\\{\\[]";
+    public static String regxOper = "\\s[\\+\\-/\\*]\\s";
+    public static String regxEq = "\\s?=\\s?";
+    public static String regxName = "[a-zA-Z]";
+    public static String regxOr = "("+regxMat+")|("+regxVec+")|("+regxD+")|("+regxName+")";
+    public static String regxPriorityMul = "("+regxOr+")\\s\\*\\s("+regxOr+")";
+    public static String regxPriorityDiv = "("+regxOr+")\\s/\\s("+regxOr+")";
+    public static String regxPriorityBrackets= "\\(\\(*("+regxOr+")(("+regxOper+")\\(?("+regxOr+")\\)?)+\\)";
+    public static String regxPriorityFull = "("+regxPriorityMul+")|("+regxPriorityDiv+")|("+regxPriorityBrackets+")";
+    public static String regxFull = "\\(?("+regxOr+")("+regxOper+")("+regxOr+")\\)?";
+    public static String regxFullEq = "(\\w("+regxEq+"))?\\(*("+regxOr+")(("+regxOper+")\\(*("+regxOr+")\\)*)*";
 
-    static public String regxDandD = "("+regxD+")"+"("+regxOper+")"+"("+regxD+")";
-    static public String regxDandV = "("+regxD+")"+"("+regxOper+")"+"("+regxVec+")";
-    static public String regxDandM = "("+regxD+")"+"("+regxOper+")"+"("+regxMat+")";
 
-    static public String regxVandD = "("+regxVec+")"+"("+regxOper+")"+"("+regxD+")";
-    static public String regxVandV = "("+regxVec+")"+"("+regxOper+")"+"("+regxVec+")";
-    static public String regxVandM = "("+regxVec+")"+"("+regxOper+")"+"("+regxMat+")";
-
-    static public String regxMandD = "("+regxMat+")"+"("+regxOper+")"+"("+regxD+")";
-    static public String regxMandV = "("+regxMat+")"+"("+regxOper+")"+"("+regxVec+")";
-    static public String regxMandM = "("+regxMat+")"+"("+regxOper+")"+"("+regxMat+")";
 
 }

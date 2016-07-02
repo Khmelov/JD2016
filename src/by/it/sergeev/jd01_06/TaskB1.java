@@ -9,7 +9,7 @@ public class TaskB1 {
         char[] chars = "БВГДЖЗЙКЛМНПРСТФХЦЧШЩ".toCharArray();
         StringBuffer sb = new StringBuffer();
         Matcher m = Pattern.compile("\\b([а-яА-ЯёЁ])(.+?)\\b").matcher(Pushkin.getString());
-        //Pattern compile(String regex) – возвращает Pattern, который соответствует regex.
+        //PatternFloat compile(String regex) – возвращает PatternFloat, который соответствует regex.
         //Matcher matcher(CharSequence input) – возвращает Matcher, с помощью которого можно находить соответствия в строке input.
         //\b  Граница слова
         int count = 0;

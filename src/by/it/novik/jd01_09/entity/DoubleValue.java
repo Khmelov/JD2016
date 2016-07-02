@@ -1,5 +1,9 @@
 package by.it.novik.jd01_09.entity;
 
+import by.it.novik.jd01_09.utils.MapValues;
+
+import java.util.Map;
+
 /**
  * Created by Kate Novik.
  */
@@ -12,13 +16,14 @@ public class DoubleValue extends Variable {
         this.valueD = 0;
     }
 
-    public DoubleValue(double valueD) {
+    public DoubleValue (double valueD) {
         this.valueD = valueD;
     }
 
-    public DoubleValue(String valueD) {
+    public DoubleValue (String valueD) {
         setValue (valueD);
     }
+
 
     /**
      * Override метода получить значение переменной
@@ -35,6 +40,35 @@ public class DoubleValue extends Variable {
      */
     public void setValue(Double valueD) {
         this.valueD = valueD;
+    }
+
+    /**
+     * Перегрузка метода saveByName - сохранить по имени переменную
+     * @param nameVar Название переменной типа String
+     * @return true - переменная по имени сохранена
+     */
+    @Override
+    public boolean saveByName(String nameVar) {
+        Map <String,Variable> nameVariables = MapValues.getInstance();
+        //if (!nameVariables.containsKey(nameVar)) {
+        nameVariables.put(nameVar, new DoubleValue(this.valueD));
+        return true;
+        //}
+        //return false;
+    }
+
+    /**
+     * Перегрузка метода readByName - прочитать значение переменной по имени
+     * @param nameVar Название переменной типа String
+     * @return Значение переменной
+     */
+    @Override
+    public Double readByName(String nameVar) {
+        Map <String,Variable> nameVariables = MapValues.getInstance();
+        if (nameVariables.containsKey(nameVar)) {
+            return ((DoubleValue) nameVariables.get(nameVar)).getValue();
+        }
+        return null;
     }
 
     /**

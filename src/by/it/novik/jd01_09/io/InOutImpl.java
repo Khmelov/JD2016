@@ -9,7 +9,11 @@ import java.io.InputStreamReader;
  * Created by Kate Novik.
  */
 public class InOutImpl implements IInOut {
-
+    /**
+     * Метод получения строки ввода из потока
+     * @return Строка ввода
+     * @throws IOException
+     */
     @Override
     public String input() throws IOException {
         BufferedReader line= new BufferedReader(new InputStreamReader(System.in));
@@ -18,10 +22,15 @@ public class InOutImpl implements IInOut {
         return out;
     }
 
+    /**
+     * Метод печати строки для вывода
+     * @param value Строка вывода
+     */
     @Override
     public void output(String value) {
-        if (!value.isEmpty()) {
+        if (value!=null) {
             System.out.println(value);
         }
+        else System.out.println("Выражение неверное!");
     }
 }

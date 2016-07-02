@@ -2,7 +2,9 @@ package by.it.novik.jd01_09.entity;
 
 
 import by.it.novik.jd01_09.patterns.PatternsVar;
+import by.it.novik.jd01_09.utils.MapValues;
 
+import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -45,6 +47,35 @@ public class MatrixValue extends Variable {
     }
 
     /**
+     * Перегрузка метода saveByName - сохранить по имени переменную
+     * @param nameVar Название переменной типа String
+     * @return true - переменная по имени сохранена
+     */
+    @Override
+    public boolean saveByName(String nameVar) {
+        Map<String,Variable> nameVariables = MapValues.getInstance();
+//        if (!nameVariables.containsKey(nameVar)) {
+            nameVariables.put(nameVar, new MatrixValue(this.valueM));
+            return true;
+//        }
+//        return false;
+    }
+
+    /**
+     * Перегрузка метода readByName - прочитать значение переменной по имени
+     * @param nameVar Название переменной типа String
+     * @return Значение переменной
+     */
+    @Override
+    public double[][] readByName(String nameVar) {
+        Map <String,Variable> nameVariables = MapValues.getInstance();
+        if (nameVariables.containsKey(nameVar)) {
+            return ((MatrixValue) nameVariables.get(nameVar)).getValue();
+        }
+        return null;
+    }
+
+    /**
      * Override метода toString
      * @return Значение переменной в виде строки
      */
@@ -57,7 +88,7 @@ public class MatrixValue extends Variable {
                 k++;
                 s = s.append(m.toString());
                 if (k % valueM.length != 0) {
-                    s.append(", ");
+                    s.append(",");
                 } else if (k != valueM.length * valueM.length) {
                     s.append("},{");
                 } else {

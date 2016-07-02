@@ -1,6 +1,7 @@
 package by.it.novik.jd01_09.operations;
 
 import by.it.novik.jd01_09.entity.Variable;
+import by.it.novik.jd01_09.exceptions.ErrorOperationsException;
 
 /**
  * Created by Катя.
@@ -12,5 +13,5 @@ public interface IMultiplication {
      * @param valueTwo Второй множитель
      * @return Результат умножения
      */
-    Variable multiplication (Variable valueOne, Variable valueTwo);
+    Variable multiplication (Variable valueOne, Variable valueTwo) throws ErrorOperationsException;
 }

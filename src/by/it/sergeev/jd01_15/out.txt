@@ -1,0 +1,41 @@
+package by.it.sergeev.jd01_15;
+
+import java.io.*;
+
+public class TaskB {
+
+    public static final String OUT_CR = "Out" + "cr";
+
+    public static void main(String[] arg) {
+        String src = System.getProperty("user.dir") + "
+        String cl = TaskB.class.getName();
+        String path = src.concat(cl.replaceAll("[.]", "
+        String fileOutTxt = src + "by
+        System.out.println(path);
+
+        try {
+            FileReader fr = new FileReader(path);
+            BufferedReader in = new BufferedReader(fr);
+            String line;
+            StringBuilder code = new StringBuilder("");
+            while ((line = in.readLine()) != null) {
+                
+                    
+                code.append(line.replaceAll("(
+            }
+            String liner = code.toString().replaceAll(OUT_CR, "\n");
+            try (PrintWriter printer =
+                         new PrintWriter(
+                                 new FileWriter(fileOutTxt, false)))
+            {
+                printer.println(liner);
+                System.out.print(liner);
+            }
+        } catch (java.io.IOException e) {
+            System.out.println("Ошибка работы с " + path);
+        }
+    }
+}
+
+
+

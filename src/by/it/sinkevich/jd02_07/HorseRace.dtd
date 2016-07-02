@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+        <!ELEMENT HorseRace (Clients, Races, BookMaker, Horses)>
+        <!ATTLIST HorseRace date CDATA #REQUIRED>
+        <!ELEMENT Clients (Client+)>
+        <!ELEMENT Client (Age, Vip, Bets?)>
+        <!ATTLIST Client name CDATA #REQUIRED>
+        <!ATTLIST Client sex CDATA #IMPLIED>
+        <!ELEMENT Age (#PCDATA)>
+        <!ELEMENT Vip (#PCDATA)>
+        <!ELEMENT Bets (Bet*)>
+        <!ELEMENT Bet (Race, Horse, Sum, Payout)>
+        <!ATTLIST Bet time CDATA #REQUIRED
+        <!ELEMENT Race (RaceNumber, Horses, Winner)>
+        <!ATTLIST Race time CDATA #REQUIRED
+        <!ELEMENT RaceNumber (#PCDATA)>
+        <!ELEMENT Horses (Horse+)>
+        <!ELEMENT Horse (Name, Odds)>
+        <!ELEMENT Name (#PCDATA)>
+        <!ELEMENT Odds (#PCDATA)>
+        <!ELEMENT Winner (Horse)>
+        <!ELEMENT Sum (#PCDATA)>
+        <!ELEMENT Payout (#PCDATA)>
+        <!ELEMENT Races (Race+)>
+        <!ELEMENT BookMaker (Name, Bets, Profit)>
+        <!ELEMENT Profit (#PCDATA)>

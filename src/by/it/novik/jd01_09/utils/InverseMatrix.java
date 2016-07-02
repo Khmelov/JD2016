@@ -24,12 +24,12 @@ public class InverseMatrix {
         }
 
         //System.out.println("Матрица свободных членов и правых частей c единичной матрицей");
-        //InOut.printArray2D(array);
+        //Input.printArray2D(array);
 
         array = transformationMatrixOfGauss(array);
 
         //System.out.println("Матрица c единичной матрицей слева");
-        //InOut.printArray2D(array);
+        //Input.printArray2D(array);
 
         //Создание массива для хранения обратной матрицы и его заполнение
         double[][] inverseMat = new double[matrix.length][matrix[0].length];
@@ -58,7 +58,7 @@ public class InverseMatrix {
             }
         }
         //System.out.println("прямой ход");
-        //InOut.printArray2D(array);
+        //Input.printArray2D(array);
 
         //Обратный ход метода Гаусса с обнулением элементов над главной диагональю
         for (int diag=n-1;diag>0;diag--){
@@ -70,7 +70,7 @@ public class InverseMatrix {
             }
         }
         //System.out.println("обратный ход");
-        //InOut.printArray2D(array);
+        //Input.printArray2D(array);
         return array;
     }
 }

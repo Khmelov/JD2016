@@ -83,16 +83,8 @@ public class Bookcase extends Cupboards {
         System.out.print("Состояние книжного шкафа:");
         if (getStateAssemble()) {
             System.out.print("собран");
-            if (stateHang) {
-                System.out.print(", повешен");
-            } else {
-                System.out.print(", не повешен");
-            }
-            if (getStateOpen()) {
-                System.out.print(", открыт");
-            } else {
-                System.out.print(", закрыт");
-            }
+            System.out.println(stateHang ? ", повешен" : ", не повешен");
+            System.out.println(getStateOpen() ? ", открыт" : ", закрыт");
         } else {
             System.out.print("разобран, не повешен, открыт");
         }

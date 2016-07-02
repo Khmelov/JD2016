@@ -8,7 +8,7 @@ import java.io.IOException;
 public class Runner  {
     public static void main(String[] args) throws IOException {
         //Ввод одномерного массива с клавиатуры
-        // String line=InOut.consoleStringLine();
+        // String line=Input.consoleStringLine();
         String line="71 12 14 789 6 565 76 712";
         double[] v=Util.StringLineToIntArray(line);
 

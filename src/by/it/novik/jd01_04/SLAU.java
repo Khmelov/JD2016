@@ -61,7 +61,7 @@ public class SLAU {
             }
         }
         //System.out.println("прямой ход");
-        //InOut.printArray2D(array);
+        //Input.printArray2D(array);
         //Обратный ход метода Гаусса с обнулением элементов над главной диагональю
         for (int diag=n-1;diag>0;diag--){
             for(int row=0;row<diag;row++){
@@ -72,7 +72,7 @@ public class SLAU {
             }
         }
         //System.out.println("обратный ход");
-        //InOut.printArray2D(array);
+        //Input.printArray2D(array);
         for (int i=0;i<n;i++) {
             double k=1/array[i][i];
             determinant*=array[i][i];
@@ -83,7 +83,7 @@ public class SLAU {
 
         }
         //System.out.println("Единичная матрица слева, " + "d="+determinant);
-        //InOut.printArray2D(array);
+        //Input.printArray2D(array);
         X=new double[n];
         for (int i=0;i<n;i++) {
             X[i]=array[i][n];
