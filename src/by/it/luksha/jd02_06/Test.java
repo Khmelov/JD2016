@@ -100,8 +100,5 @@ public class Test {
         System.out.println(Operation.mult(matrix3x3, matrix3x2));
         System.out.println("Матрица*матрица:");
         System.out.println(Operation.mult(matrix3x3, matrix4x5));
-
-
-
     }
 }
