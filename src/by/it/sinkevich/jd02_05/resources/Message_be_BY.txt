@@ -1,2 +1,0 @@
-helloMessage=Прывітанне, Сінкевіч Дзяніс Сяргеевіч!
-errorMessage.LocaleNotFound = "Абраная вамі мова не падтрымліваецца!"
