@@ -1,5 +1,6 @@
 package by.it.novik.jd03_03.dao;
 
+import by.it.novik.jd03_03.beans.Authorization;
 import by.it.novik.jd03_03.connection.ConnectorDB;
 import by.it.novik.jd03_03.beans.User;
 
@@ -95,6 +96,20 @@ public class UserDAO extends AbstractDAO implements IDAO<User,Integer> {
             System.out.println("Error connection or sql operation!" + e);
         }
         return userList;
+    }
+
+    /**
+     * Получение объекта User по ДТО Authorization
+     * @param authorization ДТО Authorization
+     * @return объект User
+     */
+    public User getByAuthorization (Authorization authorization) {
+        User resultUser = null;
+        List<User> listUser = getAll("Where users.Login=" + authorization.getNickname() + " AND users.Password=" + authorization.getPassword());
+        if (listUser.size() > 0) {
+            resultUser = listUser.get(0);
+        }
+        return resultUser;
     }
 
 }
