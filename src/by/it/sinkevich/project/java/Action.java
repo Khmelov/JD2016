@@ -6,14 +6,14 @@ public enum Action {
     REGISTER {
         {
             command = new CommandRegister();
-            startPage = "/signup.jsp";
+            startPage = "/registration.html";
             okPage = "/login.jsp";
         }
     },
     LOGIN {
         {
             command = new CommandLogin();
-            startPage = "/login.jsp";
+            startPage = "/login.html";
             okPage = "/main.jsp";
         }
     },
