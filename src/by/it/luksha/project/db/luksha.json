@@ -1,0 +1,22 @@
+/**
+ Export to JSON plugin for PHPMyAdmin
+ @version 0.1
+ */
+
+// Database 'luksha'
+
+// luksha.cars
+
+[{"ID":"1","Brand":"BMW","Model":"7er","Category":"business","Cost":"70","Consumption":"12.5"}, {"ID":"2","Brand":"Toyota","Model":"LC 200","Category":"off-road","Cost":"120","Consumption":"15.7"}, {"ID":"3","Brand":"Opel","Model":"Astra","Category":"economy","Cost":"25","Consumption":"9.5"}, {"ID":"4","Brand":"Batmobil","Model":"Spiceship","Category":"off-road","Cost":"1000","Consumption":"100.5"}]
+
+// luksha.orders
+
+[{"ID":"1","FK_User":"1","FK_Car":"1","StartRent":"2016-07-01 00:00:01.000000","EndRent":"2016-07-03 00:00:01.000000","TotalCost":"500"}]
+
+// luksha.roles
+
+[{"ID":"1","Name":"Administrator"}, {"ID":"2","Name":"User"}, {"ID":"3","Name":"Guest"}]
+
+// luksha.users
+
+[{"ID":"1","Login":"Administrator","Password":"admin123","Email":"admin@carrent.com","FK_Role":"1"}, {"ID":"2","Login":"User","Password":"qwerty123","Email":"admin@google.com","FK_Role":"2"}, {"ID":"3","Login":"CoolBoy","Password":"12345678","Email":"hanson@facebook.com","FK_Role":"2"}, {"ID":"4","Login":"CoolGirl","Password":"87654321","Email":"pretty@vk.com","FK_Role":"2"}, {"ID":"5","Login":"Batman","Password":"123qwe","Email":"iambat@gmail.com","FK_Role":"2"}, {"ID":"6","Login":"Batman","Password":"123qwe","Email":"iambat@gmail.com","FK_Role":"2"}, {"ID":"7","Login":"Batman","Password":"123qwe","Email":"iambat@gmail.com","FK_Role":"2"}, {"ID":"8","Login":"Batman","Password":"123qwe","Email":"iambat@gmail.com","FK_Role":"2"}, {"ID":"9","Login":"Batman","Password":"123qwe","Email":"iambat@gmail.com","FK_Role":"2"}]
