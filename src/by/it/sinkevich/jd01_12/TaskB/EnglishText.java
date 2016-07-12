@@ -20,7 +20,7 @@ class EnglishText {
             "Shakespeare's use of his poetic dramatic structure (especially effects such as switching between " +
             "comedy and tragedy to heighten tension, his expansion of minor characters, and his use of sub-plots to embellish the story) " +
             "has been praised as an early sign of his dramatic skill. The play ascribes different poetic forms to different characters, " +
-            "sometimes changing the form as the character develops. Romeo, for example, grows more adept at the sonnet over the course of the play.\n" +
+            "sometimes changing the advertisement as the character develops. Romeo, for example, grows more adept at the sonnet over the course of the play.\n" +
             "Romeo and Juliet has been adapted numerous times for stage, film, musical and opera venues. " +
             "During the English Restoration, it was revived and heavily revised by William Davenant. " +
             "David Garrick's 18th-century version also modified several scenes, removing material then considered indecent, " +
