@@ -1,5 +1,8 @@
+<%@ page language="java" pageEncoding="UTF-8" %>
 <%@ include file="include/begin-html.jsp" %>
-
-<p>INDEX: ${message}</p>
-
+<main>
+    <div class="container">
+        <p>Здесь будет список всех автомобилей</p>
+    </div>
+</main>
 <%@ include file="include/end-html.jsp" %>

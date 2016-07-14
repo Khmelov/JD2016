@@ -2,27 +2,31 @@ package by.it.luksha.project.java;
 
 
 enum Action {
+    //регистрация
     SIGNUP {
         {
             this.command = new CommandSignUp();
             this.inPage="/signup.jsp";
-            this.okPage ="/login.jsp";
+            this.okPage ="/signin.jsp";
         }
     },
-    LOGIN {
+    //авторизация
+    SIGNIN {
         {
-            this.command = new CommandLogin();
-            this.inPage="/login.jsp";
-            this.okPage ="/main.jsp";
+            this.command = new CommandSignIn();
+            this.inPage="/signin.jsp";
+            this.okPage ="/index.jsp";
         }
     },
+    //
     LOGOUT {
         {
             this.command = new CommandLogout();
-            this.inPage="/login.jsp";
-            this.okPage ="/login.jsp";
+            this.inPage="/signin.jsp";
+            this.okPage ="/signin.jsp";
         }
     },
+    //
     ERROR {
         {
             this.command = new CommandLogout();

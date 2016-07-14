@@ -24,6 +24,9 @@ public class Controller extends HttpServlet {
     private void processRequest(HttpServletRequest request,
                                 HttpServletResponse response)
             throws ServletException, IOException {
+        //выставим в сообщение данные из формы (для отладки)
+        request.setAttribute(Action.msgMessage, FormHelper.strDebugForm(request));
+
         ActionFactory client = new ActionFactory(); // определение команды, пришедшей из JSP
         ActionCommand command = client.defineCommand(request);
 
