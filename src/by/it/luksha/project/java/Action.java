@@ -18,7 +18,14 @@ enum Action {
             this.okPage ="/index.jsp";
         }
     },
-    //
+    //авторизация
+    ADDORDER {
+        {
+            this.command = new CommandAddOrder();
+            this.inPage="/order.jsp";
+            this.okPage ="/order.jsp";
+        }
+    },
     LOGOUT {
         {
             this.command = new CommandLogout();
