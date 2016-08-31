@@ -1,1 +1,0 @@
-D:\Java\jdk1.8.0_92\bin\xjc.exe d:\myJava\JD2016\src\by\it\luksha\jd02_09\taskB\CarRent.xsd -d d:\myJava\JD2016\src\by\it\luksha\jd02_09\taskB\

@@ -1,1 +1,0 @@
-INSERT INTO users (ID, First_Name, Middle_Name, Last_Name, Passport, Address, Phone, Login, Password, Email, FK_Role) VALUES ('2', 'Петр', 'Петрович', 'Петров', 'MC 456789, 12.06.1999', 'г. Минск, ул. Энгельса 6-8', '+375447774323', 'petr', '456', 'petrov_p@gmail.com', '1');

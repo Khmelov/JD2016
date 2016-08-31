@@ -1,1 +1,0 @@
-native2ascii.exe -encoding utf-8 database.txt database.properties

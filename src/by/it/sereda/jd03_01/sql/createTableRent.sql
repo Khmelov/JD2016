@@ -1,1 +1,0 @@
-CREATE TABLE `seredatest`.`rent` ( `ID` INT(10) NOT NULL AUTO_INCREMENT , `Adress` VARCHAR(100) NOT NULL , `Floor` INT(10) NOT NULL , `Guests` INT(10) NOT NULL , `Hotels` VARCHAR(100) NOT NULL , `Price` INT(10) NOT NULL , `Rating` INT(10) NOT NULL , `RoomCount` INT(10) NOT NULL , `FK_Users` INT NOT NULL , PRIMARY KEY (`ID`)) ENGINE = InnoDB;

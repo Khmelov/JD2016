@@ -1,2 +1,0 @@
- CREATE TABLE drachyova.rooms ( id INT(10) NOT NULL AUTO_INCREMENT , type VARCHAR(30) NOT NULL , price INT NOT NULL ,
- isAvaliable VARCHAR(10) NOT NULL , PRIMARY KEY (id)) ENGINE = InnoDB;

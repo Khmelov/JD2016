@@ -1,1 +1,0 @@
-SELECT name, fk_role from users;
