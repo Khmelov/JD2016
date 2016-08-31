@@ -1,1 +1,0 @@
- INSERT INTO roles (role) VALUES ('administrator'), ('user');

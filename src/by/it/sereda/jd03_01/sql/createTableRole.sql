@@ -1,1 +1,0 @@
-CREATE TABLE `seredatest`.`role` ( `ID` INT(10) NOT NULL , `Role` VARCHAR(100) NOT NULL , PRIMARY KEY (`ID`)) ENGINE = InnoDB;

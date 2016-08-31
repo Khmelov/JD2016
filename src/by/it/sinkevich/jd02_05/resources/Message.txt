@@ -1,2 +1,0 @@
-helloMessage=Hello, Sinkevich Denis Sergeevich!
-errorMessage.LocaleNotFound = "your selected language is not supported!"

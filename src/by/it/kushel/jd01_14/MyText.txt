@@ -1,6 +1,0 @@
-Creating a Thread
-In the most general sense, you create a thread by instantiating an object of type  Thread.
-Java defines two ways in which this can be accomplished:
-•	 You can implement the Runnable interface.
-•	 You can extend the  Thread class, itself.
-The following two sections look at each method, in turn.

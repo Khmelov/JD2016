@@ -1,3 +1,0 @@
-DELETE FROM tours;
-DELETE FROM users;
-DELETE FROM roles;
